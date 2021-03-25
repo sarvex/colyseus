@@ -335,6 +335,11 @@ export abstract class Room<State= any, Metadata= any> {
           throw new ServerError(ErrorCode.AUTH_FAILED, 'onAuth failed');
         }
 
+        // Has the room been locked in the meantime?
+        if (this.locked) {
+          throw new ServerError(ErrorCode.MATCHMAKE_ROOM_LOCKED, 'room is locked.');
+        }
+
         if (this.onJoin) {
           await this.onJoin(client, options, client.auth);
         }

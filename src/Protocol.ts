@@ -25,6 +25,7 @@ export enum Protocol {
 
 export enum ErrorCode {
   // MatchMaking Error Codes
+  MATCHMAKE_ROOM_LOCKED = 4209, // when room has been locked between issuing 
   MATCHMAKE_NO_HANDLER = 4210,
   MATCHMAKE_INVALID_CRITERIA = 4211,
   MATCHMAKE_INVALID_ROOM_ID = 4212,
