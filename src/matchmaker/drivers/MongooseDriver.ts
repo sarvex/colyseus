@@ -26,6 +26,7 @@ export class MongooseDriver implements MatchMakerDriver {
 
   constructor(connectionURI?: string) {
     /* tslint:disable:no-string-literal */
+    // @ts-ignore
     if (mongoose.connection.readyState === mongoose.connection.states['disconnected']) {
     /* tslint:enable:no-string-literal */
       mongoose.connect(connectionURI || process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/colyseus', {

@@ -15,12 +15,12 @@ import { ClientState } from "../../src/transport/Transport";
 
 export const DRIVERS = [
   new LocalDriver(),
-  new MongooseDriver('mongodb://127.0.0.1:27017/colyseus_test'),
+  // new MongooseDriver('mongodb://127.0.0.1:27017/colyseus_test'),
 ];
 
 export const PRESENCE_IMPLEMENTATIONS: Presence[] = [
   new LocalPresence(),
-  new RedisPresence()
+  // new RedisPresence()
 ];
 
 export class RawClient extends EventEmitter {
